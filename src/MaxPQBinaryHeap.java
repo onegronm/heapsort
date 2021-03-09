@@ -51,7 +51,7 @@ public class MaxPQBinaryHeap<Key extends Comparable<Key>> {
     private void sink(int k){
         while (2 * k < pq.size()){
             int j = 2 * k;
-            if (j < pq.size() && j < j + 1){ // children of node at 2k and 2k+1
+            if (j < pq.size() && less(j, j+1)){ // children of node at 2k and 2k+1
                 j++;
             }
             if (!less(k,j))
